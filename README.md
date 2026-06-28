@@ -1,4 +1,4 @@
-# 🎵 HalexMusic Player 2.1V
+# 🎵 HalexMusic Player 
 Бесплатный музыкальный плеер на Python
 
 ## Возможности:
