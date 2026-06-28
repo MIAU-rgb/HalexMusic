@@ -8,3 +8,5 @@
 - Shuffle
 - Горячие клавиши
 - Сохранение настроек
+🌸 Flower | 4999p
+🎵 Creator of HalexMusic Player 2.1V
