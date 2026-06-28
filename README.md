@@ -8,5 +8,5 @@
 - Shuffle
 - Горячие клавиши
 - Сохранение настроек
-🌸 Flower | 4999p
+🌸 Flower | MIAU-rgb
 🎵 Creator of HalexMusic Player 2.1V
