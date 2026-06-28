@@ -9,4 +9,4 @@
 - Горячие клавиши
 - Сохранение настроек
 🌸 Flower | MIAU-rgb
-🎵 Creator of HalexMusic Player 2.1V
+🎵 Creator of HalexMusic Player!!!
