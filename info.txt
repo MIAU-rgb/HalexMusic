@@ -1,0 +1,53 @@
+Как я делаю Установщики\Инсталлеры??? С помощью приложения Inno Setup Compiler, скачивайте, далее создавайте файл *.iss (* - ваше название) там где лежит *.iss там и должен быть *.exe который вы собрались через инсталлер собирать
+они должны быть в одной папке (*.iss и *.exe) далее в самой программе открываете *.iss и вставляете этот код 
+[Setup]
+AppName=                         ; <-- ТУТ ТВОЁ НАЗВАНИЕ ПРИЛОЖЕНИЕ (КАК ОНО БУДЕТ НАЗЫВАТЬСЯ В ИНСТАЛЛЕРЕ)
+AppVersion=                              ; <-- МЕНЯЙ ВЕРСИЮ ТУТ (например 2.8V, 3.0V)
+AppPublisher=                             ; <-- РАЗРАБ
+AppPublisherURL=https://github.com/MIAU-rgb/HalexMusic              ; ВСТАВЛЯЙТЕ ВАШИ САЙТЫ ИЛИ ЧЁ ТАМ У ВАС ЗА ССЫЛКИ ЕСТЬ НО ТОЛЬКО ПЖ НЕ САЙТЫ С ВИРУСАМИ <3 <3 <3
+AppSupportURL=https://github.com/MIAU-rgb/HalexMusic                ; ВСТАВЛЯЙТЕ ВАШИ САЙТЫ ИЛИ ЧЁ ТАМ У ВАС ЗА ССЫЛКИ ЕСТЬ НО ТОЛЬКО ПЖ НЕ САЙТЫ С ВИРУСАМИ <3 <3 <3
+AppUpdatesURL=https://github.com/MIAU-rgb/HalexMusic                ; ВСТАВЛЯЙТЕ ВАШИ САЙТЫ ИЛИ ЧЁ ТАМ У ВАС ЗА ССЫЛКИ ЕСТЬ НО ТОЛЬКО ПЖ НЕ САЙТЫ С ВИРУСАМИ <3 <3 <3
+DefaultDirName={localappdata}\HalexMusic
+DefaultGroupName=HalexMusic
+AllowNoIcons=yes
+OutputDir=.                                   ; <-- ПАПКА КУДА СОХРАНИТСЯ УСТАНОВЩИК (точка = текущая папка)
+OutputBaseFilename=HalexMusic_Setup_2.7V      ; <-- ИМЯ ФАЙЛА УСТАНОВЩИКА (меняй версию)
+Compression=lzma
+SolidCompression=yes
+WizardStyle=modern
+PrivilegesRequired=none
+
+[Languages]
+Name: "russian"; MessagesFile: "compiler:Languages\Russian.isl"
+Name: "english"; MessagesFile: "compiler:Default.isl"
+
+[Tasks]
+Name: "desktopicon"; Description: "Создать ярлык на рабочем столе"; GroupDescription: "Дополнительные значки:"
+Name: "startmenu"; Description: "Создать ярлык в меню Пуск"; GroupDescription: "Дополнительные значки:"
+
+[Files]
+; ВОТ СЮДА ВСТАВЛЯЕШЬ ПУТЬ К СВОЕМУ .EXE ФАЙЛУ ПОСЛЕ КОМПИЛЯЦИИ PyInstaller
+; Пример: Source: "C:\Users\твой_путь\dist\ТвойФайл.exe"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Users\alesa\Desktop\Music\dist\HalexMusic_2.7V.exe"; DestDir: "{app}"; Flags: ignoreversion
+;                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+;                                 МЕНЯЙ НАЗВАНИЕ .EXE ПОД СВОЮ ВЕРСИЮ
+
+[Icons]
+; Ярлык на рабочем столе — меняй название .exe под свою версию
+Name: "{autodesktop}\HalexMusic"; Filename: "{app}\HalexMusic_2.7V.exe"; Tasks: desktopicon
+;                                                   ^^^^^^^^^^^^^^^^^^^
+;                                                   МЕНЯЙ ТУТ НАЗВАНИЕ .EXE
+
+; Ярлык в меню Пуск — меняй название .exe под свою версию
+Name: "{group}\HalexMusic"; Filename: "{app}\HalexMusic_2.7V.exe"; Tasks: startmenu
+;                                            ^^^^^^^^^^^^^^^^^^^
+;                                            МЕНЯЙ ТУТ НАЗВАНИЕ .EXE
+
+; Ярлык для удаления (НЕ ТРОГАЙ, uninstallexe — встроенная переменная)
+Name: "{group}\Удалить HalexMusic"; Filename: "{uninstallexe}"
+
+[Run]
+; Автозапуск после установки — меняй название .exe под свою версию
+Filename: "{app}\HalexMusic_2.7V.exe"; Description: "Запустить HalexMusic"; Flags: nowait postinstall skipifsilent runasoriginaluser
+;                    ^^^^^^^^^^^^^^^^^^^
+;                    МЕНЯЙ ТУТ НАЗВАНИЕ .EXE
