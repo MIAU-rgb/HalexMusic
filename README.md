@@ -1,7 +1,9 @@
 # 🎵 HalexMusic Player
 
 **Ютуб канал:** https://www.youtube.com/@GuiHUber
+
 **Автор:** MIAU-rgb (Halex)  
+
 **GitHub:** https://github.com/MIAU-rgb/HalexMusic
 
 ---
