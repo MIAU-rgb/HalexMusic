@@ -51,3 +51,69 @@ Name: "{group}\Удалить HalexMusic"; Filename: "{uninstallexe}"
 Filename: "{app}\HalexMusic_2.7V.exe"; Description: "Запустить HalexMusic"; Flags: nowait postinstall skipifsilent runasoriginaluser
 ;                    ^^^^^^^^^^^^^^^^^^^
 ;                    МЕНЯЙ ТУТ НАЗВАНИЕ .EXE
+
+====================================================-----------------------------------------------------------------------------------------------------------------------------------------------------------------------=-
+Или эта версия если там не понятно где куда вствлять. Или эта версия если там не понятно где куда вставлять. Или эта версия если там не понятно где куда вставлять. Или эта версия если там не понятно где куда вставлять.
+====================================================-----------------------------------------------------------------------------------------------------------------------------------------------------------------------=-
+
+[Setup]
+; ======================================================
+; <<<=== ВСТАВЛЯТЬ СЮДА: Номер твоей версии
+; Например: 2.7V, 2.8V, 3.0V
+AppVersion=ТВОЯ_ВЕРСИЯ_ТУТ
+; ======================================================
+
+AppName=HalexMusic
+AppPublisher=MIAU-rgb
+AppPublisherURL=https://github.com/MIAU-rgb/HalexMusic
+AppSupportURL=https://github.com/MIAU-rgb/HalexMusic
+AppUpdatesURL=https://github.com/MIAU-rgb/HalexMusic
+DefaultDirName={localappdata}\HalexMusic
+DefaultGroupName=HalexMusic
+AllowNoIcons=yes
+OutputDir=.
+
+; ======================================================
+; <<<=== ВСТАВЛЯТЬ СЮДА: Имя файла установщика
+; Например: HalexMusic_Setup_2.7V
+OutputBaseFilename=HalexMusic_Setup_ТВОЯ_ВЕРСИЯ_ТУТ
+; ======================================================
+
+Compression=lzma
+SolidCompression=yes
+WizardStyle=modern
+PrivilegesRequired=none
+
+[Languages]
+Name: "russian"; MessagesFile: "compiler:Languages\Russian.isl"
+Name: "english"; MessagesFile: "compiler:Default.isl"
+
+[Tasks]
+Name: "desktopicon"; Description: "Создать ярлык на рабочем столе"; GroupDescription: "Дополнительные значки:"
+Name: "startmenu"; Description: "Создать ярлык в меню Пуск"; GroupDescription: "Дополнительные значки:"
+
+[Files]
+; ======================================================
+; <<<=== ВСТАВЛЯТЬ СЮДА: Полный путь к твоему .exe файлу
+; Который получился после PyInstaller (лежит в папке dist)
+; Например: C:\Users\alesa\Desktop\Music\dist\HalexMusic_2.7V.exe
+Source: "C:\Users\alesa\Desktop\Music\dist\HalexMusic_ТВОЯ_ВЕРСИЯ_ТУТ.exe"; DestDir: "{app}"; Flags: ignoreversion
+; ======================================================
+
+[Icons]
+; ======================================================
+; <<<=== ВСТАВЛЯТЬ СЮДА: Название твоего .exe файла (три раза ниже)
+; Например: HalexMusic_2.7V.exe
+Name: "{autodesktop}\HalexMusic"; Filename: "{app}\HalexMusic_ТВОЯ_ВЕРСИЯ_ТУТ.exe"; Tasks: desktopicon
+Name: "{group}\HalexMusic"; Filename: "{app}\HalexMusic_ТВОЯ_ВЕРСИЯ_ТУТ.exe"; Tasks: startmenu
+; ======================================================
+
+; Удаление (не трогай)
+Name: "{group}\Удалить HalexMusic"; Filename: "{uninstallexe}"
+
+[Run]
+; ======================================================
+; <<<=== ВСТАВЛЯТЬ СЮДА: Название твоего .exe файла
+; Например: HalexMusic_2.7V.exe
+Filename: "{app}\HalexMusic_ТВОЯ_ВЕРСИЯ_ТУТ.exe"; Description: "Запустить HalexMusic"; Flags: nowait postinstall skipifsilent runasoriginaluser
+; ======================================================
